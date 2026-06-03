@@ -2,6 +2,11 @@
     "name": "adssu/student-orgs",
     "description": "ADSSU Student Organizations System",
     "require": {
-        "php": ">=8.0"
+        "php": ">=8.0",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*"
     },
+    "autoload": {
+        "files": ["db.php"]
+    }
 }
