@@ -79,6 +79,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .links { margin-top: 20px; font-size: 14px; }
         .links a { color: #6c757d; text-decoration: none; font-weight: 600; }
         .links a:hover { text-decoration: underline; color: #1e3a2f; }
+        @media (max-width: 480px) {
+            .container { padding: 25px 20px; margin: 15px; width: auto; }
+            .logo { width: 60px; }
+            h2 { font-size: 20px; }
+            input { padding: 14px; font-size: 16px; }
+            .btn { padding: 14px; font-size: 15px; }
+        }
     </style>
 </head>
 <body>

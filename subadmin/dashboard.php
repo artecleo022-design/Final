@@ -57,7 +57,7 @@ $orgStats = $stmtOrgs->fetchAll();
 </div>
 
 <div style="display: flex; gap: 25px; flex-wrap: wrap;">
-    <div class="card" style="flex: 2; min-width: 400px; margin-bottom: 0;">
+    <div class="card" style="flex: 2; min-width: 280px; margin-bottom: 0;">
         <div class="card-title"><i class="fa-solid fa-sitemap"></i> Organization Membership</div>
         <div style="overflow-x: auto;">
             <table>

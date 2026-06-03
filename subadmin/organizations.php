@@ -76,6 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <!-- List of Organizations -->
+    <div class="table-wrap">
     <table>
         <tr>
             <th>ID</th>
@@ -104,6 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </tr>
         <?php endwhile; ?>
     </table>
+    </div>
 </div>
 
 <!-- Hidden Edit Form -->
