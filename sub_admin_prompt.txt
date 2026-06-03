@@ -1,0 +1,54 @@
+I need to implement a superadmin role in my VB.NET project with a SQL Server or MySQL backend. The role should have the following capabilities:
+
+Database:
+- Users table with a `role` column as ENUM('student', 'superadmin')
+- A `login_logs` table to track login/logout activity (user_id, role, login_time, logout_time, status)
+
+Authentication & Session:
+- Login page that queries only users with `role = 'superadmin'`
+- Separate session namespace/name for the admin portal (e.g., `admin_portal`)
+- Session-based role guard: redirect if session("role") <> "superadmin"
+- On login, insert a log entry; on logout, update the log with logout time and OFFLINE status
+
+Admin Dashboard:
+- Display counts: pending applications, approved members, total students
+- Show organization membership breakdown (bar chart or table)
+- Show top organization by membership count
+
+Applicants Management:
+- List all student applications (student name, course, org, date, status)
+- Approve pending applications
+- Reject pending applications
+- Lock status after action (prevent re-processing)
+
+Members Management (Student Accounts):
+- List all users where `role = 'student'`
+- Edit student details (fullname, email, course)
+- Delete student accounts (with CASCADE on their applications)
+
+Organizations CRUD:
+- Create organizations (name, description)
+- Edit organizations
+- Delete organizations (with CASCADE on related applications/announcements)
+
+Announcements CRUD:
+- Create announcements with badge types: GENERAL, URGENT, INFO, EVENT
+- Target announcements to specific organizations or all
+- Edit announcements
+- Delete announcements
+
+Reports & Export:
+- Export approved students list as Excel (.xls/.xlsx)
+- Export as CSV
+- Export as PDF (print-optimized layout)
+- Print view with grouping by academic year/course
+- Report types: all applicants, approved, rejected, login history, org statistics
+
+Login Monitoring:
+- View last 100 login log entries (user, role, login time, status)
+- Visually distinguish superadmin vs student roles (different colors)
+
+Role-based redirects:
+- Student login page: if already logged in as student, go to student dashboard; if superadmin, go to admin dashboard
+- Admin login page: same logic in reverse
+- Prevent students from accessing admin pages and vice versa

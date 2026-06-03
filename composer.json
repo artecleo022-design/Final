@@ -1,0 +1,7 @@
+{
+    "name": "adssu/student-orgs",
+    "description": "ADSSU Student Organizations System",
+    "require": {
+        "php": ">=8.0"
+    },
+}
