@@ -99,11 +99,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST">
         <div class="form-group">
             <label>Admin ID / Email</label>
-            <input type="text" name="email" required placeholder="Enter admin username" value="admin">
+            <input type="text" name="email" required placeholder="Enter admin username">
         </div>
         <div class="form-group">
             <label>Password</label>
-            <input type="password" name="password" required placeholder="Enter password" value="admin123">
+            <input type="password" name="password" required placeholder="Enter password">
         </div>
         <button type="submit" class="btn">Login Securely</button>
     </form>
