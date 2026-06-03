@@ -70,7 +70,8 @@ try {
     // Seed Data
     // Admin
     $adminPassword = password_hash('admin123', PASSWORD_DEFAULT);
-    $pdo->exec("INSERT IGNORE INTO `users` (`id`, `fullname`, `email`, `password`, `role`) VALUES (1, 'System Admin', 'admin', '$adminPassword', 'sub_admin')");
+    $pdo->exec("INSERT INTO `users` (`id`, `fullname`, `email`, `password`, `role`) VALUES (1, 'System Admin', 'admin', '$adminPassword', 'sub_admin')
+        ON DUPLICATE KEY UPDATE `password` = '$adminPassword', `fullname` = 'System Admin'");
 
     // Students
     $studentPass = password_hash('student123', PASSWORD_DEFAULT);
